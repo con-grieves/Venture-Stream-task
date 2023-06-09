@@ -6,24 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="styles.css" rel="stylesheet">
-    <title>Venture Stream Task</title>
+    <title>Product Store v1.0</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">     
 </head>
 
 <body>
-    <div class="p-24">
-        <div>
-            <h1 class="text-4xl">Section Title</h1>
+    <div class="m-10 sm:m-20">
+        <!-- Section Title Element -->
+        <div class="mb-10">
+            <h1 class="text-3xl sm:text-4xl sectionTitle">Section Title</h1>
         </div>
+        
+        <!-- product container for horizontally scrolling product cards -->
+        <div class="flex overflow-x-auto productContainer"></div>
+        
+        <!-- Product card template -->
+        <template class="productCardTemplate">
+            <div class="productCard">
+                <a href="/build/index.html">
+                    <div class="productImageContainer">
+                        <img class="productImage" src="/images/PlaceholderImage.png" alt="">
+                        <img class="arrowContainer" src="/images/Arrow.svg" alt="">
+                    </div>
+                    <p class="text-2xl productTitle">Title</p>
+                </a>               
+            </div>           
+        </template>
 
-        <div></div>
-        <!-- Below div needs put into a template element once styled -->
-        <div>
-            <a href=""></a>
-            <a href=""></a>
-            <p>Title</p>
-        </div>
-
-        <button>Advanced Site</button>
     </div>
 </body>
 <script src="script.js" defer></script>

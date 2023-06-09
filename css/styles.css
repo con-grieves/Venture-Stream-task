@@ -2,3 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    .sectionTitle {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 700;
+    }
+    .productCard {
+        position: relative;
+    }
+    .productImage {
+        min-height: 250px;
+        min-width: 200px;
+        margin-bottom: 20px;
+    }
+    .productImageContainer:hover {
+        animation-name: imgHoverScaling;
+        animation-duration: 0.50s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+    }
+    .productImageContainer:hover .arrowContainer {
+        display: block;
+        animation-name: imgHoverShowArrow;
+        animation-delay: 0.25s;
+        animation-duration: 0.50s;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+    }
+    .productContainer {
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: auto;
+    }
+    .productContainer::-webkit-scrollbar {
+        display: none;
+    }
+    .productContainer > div {
+        margin-left: 20px;
+        position: relative;
+    }
+    .arrowContainer {
+        position: absolute;
+        bottom: 0;
+        opacity: 0;
+        right: 15%;
+        transform: translate(-50%, -50%);
+        transition: opacity 0.50s ease;
+    }
+    .productTitle {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        font-weight: 500;
+    }
+    @media screen and (min-width: 640px) {
+        .productImage {
+          min-width: 350px;
+          min-height: 450px;
+        }
+    }
+    @keyframes imgHoverScaling {
+        0% {transform: scale(1)}
+        100% {transform: scale(1.1)}
+    }
+    @keyframes imgHoverShowArrow {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+    }
+}
+
